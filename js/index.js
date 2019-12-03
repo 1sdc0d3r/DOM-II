@@ -8,6 +8,8 @@ const funInSunText = document.querySelectorAll(".destination p");
 const buttons = document.querySelectorAll(".content-pick .btn");
 const body = document.querySelector("body");
 
+const logoHead = document.querySelector(".logo-heading");
+
 console.log(navHead);
 console.log(navHead[0]);
 
@@ -24,18 +26,40 @@ navHead[0].addEventListener("click", function() {
   navHead[0].style.color = "red";
 });
 
+navHead[0].addEventListener(
+  "dblclick",
+  () => (navHead[0].style.color = "green")
+);
+
 navHead[1].addEventListener("click", function() {
   navHead[1].style.color = "blue";
 });
+
+navHead[1].addEventListener(
+  "dblclick",
+  () => (navHead[1].style.color = "orange")
+);
+
 navHead[2].addEventListener("click", function() {
   navHead[2].style.color = "green";
 });
+
+navHead[2].addEventListener(
+  "dblclick",
+  () => (navHead[2].style.color = "brown")
+);
+
 navHead[3].addEventListener("click", function() {
   navHead[3].style.color = "orange";
 });
 
+navHead[3].addEventListener(
+  "dblclick",
+  () => (navHead[3].style.color = "turquoise")
+);
+
 busImg.addEventListener("click", function() {
-  busImg.src = "../img/road.jpg";
+  busImg.src = "./img/road.jpg";
 });
 
 introText.addEventListener("click", function() {
@@ -69,3 +93,20 @@ buttons[2].addEventListener("click", function() {
   body.style.color = getRandomColor();
   body.style.background = getRandomColor();
 });
+
+logoHead.addEventListener(
+  "mouseover",
+  () => (logoHead.style.fontSize = "5rem")
+);
+
+const link = "https://www.lambdaschool.com/";
+
+const prevLinkFunc = () => navHead[0].removeAttribute("href");
+//* navHead[0].addEventListener("click", e => e.preventDefault());
+
+const giveLinkFunc = () => {
+  navHead[0].setAttribute("href", link);
+};
+
+navHead[1].addEventListener("dblclick", () => prevLinkFunc());
+navHead[2].addEventListener("dblclick", () => giveLinkFunc());
